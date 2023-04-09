@@ -19,18 +19,22 @@ Tal jogo consiste em um tabuleiro de células, onde algumas contêm minas e outr
 
 O repositório de código contém três arquivos principais:
 
-1. O arquivo [`config.js`](./src/config.js) define algumas constantes e funções que serão usadas em outros arquivos do projeto;
-2. O arquivo [`logic.js`](./src/logic.js) contém as principais funções do jogo, como a criação do tabuleiro, a distribuição das minas, a abertura de células e a verificação de vitória ou derrota;
-3. Finalmente, o arquivo [`Cell/index.js`](./src/components/Cell/index.js) contém a implementação da célula individual no tabuleiro. Cada célula pode estar aberta ou fechada, pode conter uma mina ou não, e pode estar marcada com uma bandeira ou não.
+1. O arquivo [`config.js`](./src/config.js), que define algumas constantes e funções que serão usadas em outros arquivos do projeto;
+2. O arquivo [`logic.js`](./src/logic.js), que contém as principais funções do jogo, como a criação do tabuleiro, a distribuição das minas, a abertura de células e a verificação de vitória ou derrota;
+3. Finalmente, o arquivo [`Cell/index.js`](./src/components/Cell/index.js), que contém a implementação da célula individual no tabuleiro. Cada célula pode estar aberta ou fechada, pode conter uma mina ou não, e pode estar marcada com uma bandeira ou não.
 
-Na função [`openCell`](./src/logic.js), foi utilizado o conceito de recursão para propagar a abertura das células adjacentes até que se alcance as células que não possuem mais minas em seu entorno. Isso garante que, ao se abrir uma célula livre de minas, todas as células vazias conectadas a ela também serão abertas automaticamente. Essa técnica é essencial para garantir que o jogo seja jogável e que não haja necessidade de abrir cada célula individualmente. Eis a representação dos índices de linha e coluna das células adjacentes:
+Na função [`openCell`](./src/logic.js), foram utilizados dois conceitos:
+
+1. **Recursão**: para propagar a abertura das células adjacentes até que se alcance as células que não possuem mais minas em seu entorno. Isso garante que, ao se abrir uma célula livre de minas, todas as células vazias conectadas a ela também serão abertas automaticamente. Essa técnica é essencial para garantir que o jogo seja jogável e que não haja necessidade de abrir cada célula individualmente;
+
+2. **Busca em largura** (também conhecida como _flood fill_): para encontrar as células adjacentes a uma célula específica. Essa técnica permite que sejam percorridas todas as células vizinhas, sejam elas diretamente conectadas ou não. Isso é importante para determinar o número de minas ao redor de uma célula e ajudar na decisão do jogador em relação a qual célula deve ser aberta em seguida. Além disso, a busca em largura é uma técnica muito eficiente para esse tipo de problema, já que garante que cada célula será visitada no mínimo uma vez.
+
+Eis a representação dos índices de linha e coluna das células adjacentes desenhada pelo professor:
 
 | -1, -1 | -1, 0 | -1, 1 |
 |--------|-------|-------|
 |  0, -1 |  0, 0 |  0, 1 |
 |  1, -1 |  1, 0 |  1, 1 |
-
-Já na função [`getNeighbors`](./src/logic.js), foi utilizada a busca em largura (também conhecida como _flood fill_) para encontrar as células adjacentes a uma célula específica. Essa técnica permite que sejam percorridas todas as células vizinhas, sejam elas diretamente conectadas ou não. Isso é importante para determinar o número de minas ao redor de uma célula e ajudar na decisão do jogador em relação a qual célula deve ser aberta em seguida. Além disso, a busca em largura é uma técnica muito eficiente para esse tipo de problema, já que garante que cada célula será visitada no mínimo uma vez.
 
 > Vale destacar que o presente app se encontra em andamento.
 
