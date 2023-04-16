@@ -46,10 +46,6 @@ Este foi o segundo repositório de código apresentado no [Curso Superior de TSI
 | Linguagem de programação | [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) |
 | Front-end | [React Native](https://reactnative.dev/) |
 
-## Galeria
-
-<!-- pôr foto aqui -->
-
 ## Como rodar
 
 ### Pré-requisitos
