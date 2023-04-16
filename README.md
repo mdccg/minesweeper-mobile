@@ -36,11 +36,9 @@ Eis a representação dos índices de linha e coluna das células adjacentes des
 |  0, -1 |  0, 0 |  0, 1 |
 |  1, -1 |  1, 0 |  1, 1 |
 
-> Vale destacar que o presente app se encontra em andamento.
-
 Este foi o segundo repositório de código apresentado no [Curso Superior de TSI](https://www.ifms.edu.br/campi/campus-aquidauana/cursos/graduacao/sistemas-para-internet/sistemas-para-internet) do IFMS como requisito para obtenção da nota parcial das atividades da unidade curricular Programação para Dispositivos Móveis I.
 
-| [&larr; Repositório anterior](https://github.com/mdccg/simple-calc) | [Próximo repositório &rarr;](#) |
+| [&larr; Repositório anterior](https://github.com/mdccg/simple-calc) | [Próximo repositório &rarr;](https://github.com/mdccg/hash-game) |
 |-|-|
 
 ## Pilha de tecnologia

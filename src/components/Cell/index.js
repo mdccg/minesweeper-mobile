@@ -5,11 +5,15 @@ import Flag from './../Flag';
 import styles from './styles';
 
 const Cell = ({
+  row,
+  column,
   isOpen,
+  isFlagged,
   isMined,
   minesAround,
   isExploded,
-  isFlagged,
+  openCell,
+  switchFlag,
 }) => {
   const [cellStyles, setCellStyles] = useState([styles.cell, styles.default]);
   const [characterColor, setCharacterColor] = useState('#000');
@@ -27,8 +31,13 @@ const Cell = ({
     getCharacterColor();
   }, [minesAround]);
 
+
   const handlePress = () => {
-    alert('BOOOM!');
+    openCell(row, column);
+  }
+
+  const handleLongPress = () => {
+    switchFlag(row, column);
   }
 
   useEffect(() => {
@@ -42,7 +51,10 @@ const Cell = ({
   }, [isOpen, isExploded]);
 
   return (
-    <TouchableOpacity onPress={isOpen || isFlagged ? undefined : handlePress} style={cellStyles}>
+    <TouchableOpacity
+      onLongPress={handleLongPress}
+      onPress={isOpen || isFlagged ? undefined : handlePress}
+      style={cellStyles}>
       {/*
         * FIXME
         * Validar cada possibilidade com todos os props do componente

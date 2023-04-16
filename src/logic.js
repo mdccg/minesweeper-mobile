@@ -8,9 +8,10 @@ const createBoard = (rowsAmount, columnsAmount) => {
       const cellProperties = {
         row: i,
         column: j,
-        isOpen: true,
+        isOpen: false,
         isFlagged: false,
         isMined: false,
+        isExploded: false,
         minesAround: 0,
       };
 
@@ -107,8 +108,7 @@ export const isOver = (board) => {
 const isPending = (cell) => cell.isMined && !cell.isFlagged || !cell.isMined && !cell.isOpen;
 
 export const isWinner = (board) => {
-  const cells = parseBoard(board);
-  return cells.filter((cell) => isPending(cell)).indexOf(true) === -1;
+  return parseBoard(board).filter(isPending).length === 0;
 }
 
 export const displayMines = (board) => parseBoard(board).filter((cell) => cell.isMined).forEach((cell) => cell.isOpen = true);
