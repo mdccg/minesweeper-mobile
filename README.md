@@ -34,7 +34,7 @@ Eis a representação dos índices de linha e coluna das células adjacentes des
 
 Este foi o segundo repositório de código apresentado no [Curso Superior de TSI](https://www.ifms.edu.br/campi/campus-aquidauana/cursos/graduacao/sistemas-para-internet/sistemas-para-internet) do IFMS como requisito para obtenção da nota parcial das atividades da unidade curricular Programação para Dispositivos Móveis I.
 
-| [&larr; Repositório anterior](https://github.com/mdccg/simple-calc) | [Próximo repositório &rarr;](https://github.com/mdccg/hash-game) |
+| [&larr; Repositório anterior](https://github.com/mdccg/simple-calc) | [Próximo repositório &rarr;](https://github.com/mdccg/tic-tac-toe) |
 |-|-|
 
 ## Pilha de tecnologia
